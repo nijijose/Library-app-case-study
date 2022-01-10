@@ -3,6 +3,7 @@ const flash = require('connect-flash');
 const session = require('express-session')
 const passport = require('passport');
 const app = new express();
+const port = process.env.PORT || 5300
 const nav = [
     {
         link:'/home',name:'Home'
@@ -91,4 +92,4 @@ app.get('/',function(req,res){
    });
 });
 
-app.listen(process.env.PORT || 5300);
+app.listen(port);
