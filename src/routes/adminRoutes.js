@@ -22,14 +22,14 @@ const upload = multer({
 
 
 function router(nav){
-    adminRouter.get('/',ensureAuthenticated, function(req,res){
+    adminRouter.get('/',ensureAuthenticated,ensureAuthorized, function(req,res){
         res.render('addBook',{
             nav,
             title:'Library'
         });
     });
 
-    adminRouter.post('/add',ensureAuthorized, upload.single('image'), function(req,res){
+    adminRouter.post('/add', upload.single('image'), function(req,res){
         var item = {
            title: req.body.title,
            author: req.body.author,

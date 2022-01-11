@@ -21,14 +21,14 @@ const upload = multer({
 
 
 function router(nav){
-    authoradminRouter.get('/',ensureAuthenticated, function(req,res){
+    authoradminRouter.get('/',ensureAuthenticated,ensureAuthorized, function(req,res){
         res.render('addAuthor',{
             nav,
             title:'Library'
         });
     });
 
-    authoradminRouter.post('/add',ensureAuthorized, upload.single('image'),function(req,res){
+    authoradminRouter.post('/add', upload.single('image'),function(req,res){
         console.log(req.file);
         var list = {
             author: req.body.author,
