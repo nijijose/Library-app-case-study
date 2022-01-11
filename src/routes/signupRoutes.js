@@ -20,7 +20,7 @@ function router(){
         Userdata.findOne({email: email})
            .then(user =>{
             if(user){
-                errors.push({ msg: 'Email already exist' });
+                errors.push({ msg: 'This email is already existing' });
                 res.render('signup',{
                     title:'Library',
                     errors,
