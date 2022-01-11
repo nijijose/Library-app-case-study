@@ -22,7 +22,6 @@ function router(){
             if(user){
                 errors.push({ msg: 'Email already exist' });
                 res.render('signup',{
-
                     title:'Library',
                     errors,
                     username,
