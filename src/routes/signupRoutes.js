@@ -51,7 +51,7 @@ function router(){
                        //save user
                        newUserdata.save()
                        .then(user => {
-                           req.flash('success_msg','You have successfully signed up and can login')
+                           req.flash('success_msg','You have successfully signed up and can now login')
                            res.redirect('/login');
                        })
                        .catch(err => console.log(err));
