@@ -6,7 +6,8 @@ function router(nav){
     homeRouter.get('/',ensureAuthenticated, function(req,res){
         res.render("home",{
             nav,
-            title:'Library'
+            title:'Library',
+            username:req.user.username
         });
     });
 return homeRouter;
